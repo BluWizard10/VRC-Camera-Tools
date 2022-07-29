@@ -1,4 +1,4 @@
-﻿namespace CameraTools
+namespace CameraTools
 {
     using System;
     using System.IO;
@@ -93,7 +93,7 @@
 
         public void Save(string type, RenderTexture rt)
         {
-            Texture2D tex = new Texture2D(rt.width, rt.height, TextureFormat.ARGB32, false);
+            Texture2D tex = new Texture2D(rt.width, rt.height, Transparent ? TextureFormat.ARGB32 : TextureFormat.RGB48, false);
 
             RenderTexture.active = rt;
             tex.ReadPixels(new Rect(0, 0, rt.width, rt.height), 0, 0);
@@ -111,4 +111,3 @@
         }
     }
 }
-
