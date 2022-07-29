@@ -93,7 +93,7 @@ namespace CameraTools
 
         public void Save(string type, RenderTexture rt)
         {
-            Texture2D tex = new Texture2D(rt.width, rt.height, Transparent ? TextureFormat.ARGB32 : TextureFormat.RGB48, false);
+            Texture2D tex = new Texture2D(rt.width, rt.height, Transparent ? TextureFormat.ARGB32 : TextureFormat.RGB565, false);
 
             RenderTexture.active = rt;
             tex.ReadPixels(new Rect(0, 0, rt.width, rt.height), 0, 0);
